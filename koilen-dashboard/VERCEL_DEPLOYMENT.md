@@ -103,7 +103,7 @@ If you want to add custom configuration:
 2. **Example (optional)**:
    ```
    NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID=your_project_id
-   NEXT_PUBLIC_KOILEN_CONTRACT=0x0EA04c33d1e50dba7cE53f51CCA5Af3B0De65642
+   NEXT_PUBLIC_KOILEN_CONTRACT=0x21eaC0883E57D0F0a6D81C8cF6E27b68164a4CeE
    ```
 
 ---
@@ -274,7 +274,8 @@ Before deploying to production:
 
 - **Production**: `https://koilen-dashboard.vercel.app`
 - **GitHub**: `https://github.com/mexiweb3/Koilen`
-- **Etherscan (Contract)**: `https://sepolia.etherscan.io/address/0x0EA04c33d1e50dba7cE53f51CCA5Af3B0De65642`
+- **Etherscan (Public Test Contract)**: `https://sepolia.etherscan.io/address/0x21eaC0883E57D0F0a6D81C8cF6E27b68164a4CeE`
+- **Contract Type**: Public Test Contract (Multi-Wallet Access)
 
 ### Preview Deployments:
 

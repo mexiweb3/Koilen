@@ -51,9 +51,10 @@ vercel --prod
 
 Your dashboard will be live at:
 - `https://koilen-dashboard.vercel.app` (or your custom URL)
-- Test wallet connection
+- **Contract**: Public Test Contract (Multi-Wallet) - `0x21eaC0883E57D0F0a6D81C8cF6E27b68164a4CeE`
+- Test wallet connection with multiple wallets
 - Verify Sepolia network works
-- Log test events
+- Log test events from any connected wallet
 
 ## Troubleshooting
 

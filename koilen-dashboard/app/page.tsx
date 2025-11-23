@@ -5,7 +5,7 @@ import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useWriteContract, useWaitForTransactionReceipt, useReadContract } from 'wagmi';
 import { formatEther } from 'viem';
 
-const KOILEN_ADDRESS = '0x0EA04c33d1e50dba7cE53f51CCA5Af3B0De65642' as const;
+const KOILEN_ADDRESS = '0x21eaC0883E57D0F0a6D81C8cF6E27b68164a4CeE' as const;
 
 const KOILEN_ABI = [
   {
@@ -22,11 +22,16 @@ const KOILEN_ABI = [
     outputs: []
   },
   {
-    name: 'getClientCredits',
+    name: 'getClient',
     type: 'function',
     stateMutability: 'view',
     inputs: [{ name: 'clientUsername', type: 'string' }],
-    outputs: [{ name: '', type: 'uint256' }]
+    outputs: [
+      { name: 'isActive', type: 'bool' },
+      { name: 'balance', type: 'uint256' },
+      { name: 'consumed', type: 'uint256' },
+      { name: 'creator', type: 'address' }
+    ]
   }
 ] as const;
 
@@ -78,12 +83,14 @@ export default function Home() {
   const eventType = detectEventType();
   const eventCost = EVENT_COSTS[eventType];
 
-  const { data: credits } = useReadContract({
+  const { data: clientData } = useReadContract({
     address: KOILEN_ADDRESS,
     abi: KOILEN_ABI,
-    functionName: 'getClientCredits',
+    functionName: 'getClient',
     args: [clientName],
   });
+
+  const credits = clientData ? clientData[1] : 0n;
 
   const { data: hash, writeContract, isPending } = useWriteContract();
 
@@ -145,8 +152,8 @@ export default function Home() {
               <h1 className="text-2xl font-bold text-gray-900">
                 Koilen Dashboard
               </h1>
-              <span className="ml-3 px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded">
-                Test Contract (No NameService)
+              <span className="ml-3 px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded">
+                Public Test Contract (Multi-Wallet)
               </span>
             </div>
             <div className="flex items-center">
