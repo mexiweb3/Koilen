@@ -27,17 +27,22 @@ Koilen is an IoT sensor monitoring platform built on EVVM (Ethereum Virtual Mach
 
 Koilen is submitted to the **EVVM Hackathon** with a **dual deployment strategy** that showcases complete EVVM ecosystem mastery:
 
-### Two Complete EVVM Deployments
+### Three Complete Deployments
 
-**1. MATE Metaprotocol (EVVM ID 2)**
+**1. MATE Metaprotocol (EVVM ID 2)** - Production
 - Official EVVM ecosystem integration
 - KoilenService: [0x8DD57a31a4b21FD0000351582e28E50600194f74](https://sepolia.etherscan.io/address/0x8DD57a31a4b21FD0000351582e28E50600194f74)
 - Production-ready IoT monitoring on established infrastructure
 
-**2. Custom EVVM (EVVM ID 1074)**
+**2. Custom EVVM (EVVM ID 1074)** - Custom Infrastructure
 - Complete infrastructure deployed from scratch
 - Custom EVVM + NameService + KoilenService
 - Full control over governance and parameters
+
+**3. Public Test Contract** - Demo & Testing
+- KoilenServiceTestPublic: [0x21eaC0883E57D0F0a6D81C8cF6E27b68164a4CeE](https://sepolia.etherscan.io/address/0x21eaC0883E57D0F0a6D81C8cF6E27b68164a4CeE)
+- Multi-wallet access for easy testing
+- Koilen Dashboard live integration
 
 ### Hackathon Highlights
 
@@ -54,17 +59,25 @@ Koilen is submitted to the **EVVM Hackathon** with a **dual deployment strategy*
 
 ## 🚀 Quick Start
 
-### For Testing (Fastest)
+### For Testing (Fastest) - Use Public Test Contract
+
+**✨ Try the Live Dashboard with ANY Wallet!**
+
+The Public Test Contract allows any wallet to interact - perfect for testing!
 
 ```bash
-# Register a test client with 10,000 KOIL
-cast send 0x0EA04c33d1e50dba7cE53f51CCA5Af3B0De65642 \
-  "registerClient(string,uint256)" \
-  "MyTestClient" \
-  10000000000000000000000 \
-  --account defaultKey \
-  --rpc-url https://0xrpc.io/sep
+# Already set up with test data:
+# Client: KoilenTest (10,000 KOIL)
+# Sensor: KoilenTest_Lab_Sensor1
+
+# Just run the dashboard and connect with any wallet:
+cd koilen-dashboard
+npm install --legacy-peer-deps
+npm run dev
+# Open http://localhost:3003
 ```
+
+**Contract**: `0x21eaC0883E57D0F0a6D81C8cF6E27b68164a4CeE` (Public Test - Multi-Wallet Access)
 
 **See**: [QUICK_TEST.md](QUICK_TEST.md) for complete testing guide
 

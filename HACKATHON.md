@@ -39,12 +39,37 @@
 - **Status**: ✅ Deployed & Verified on Etherscan
 - **Features**: Independent infrastructure, custom configuration
 
-### Why Two Deployments?
+### Deployment 3: Public Test Contract (Multi-Wallet Demo)
+
+**KoilenServiceTestPublic**: [0x21eaC0883E57D0F0a6D81C8cF6E27b68164a4CeE](https://sepolia.etherscan.io/address/0x21eaC0883E57D0F0a6D81C8cF6E27b68164a4CeE)
+
+**Purpose**: Public demo contract for hackathon judges and multi-wallet testing
+
+**Features**:
+- **Multi-Wallet Access**: ANY wallet can register clients, branches, sensors
+- **Public Event Logging**: ANY wallet can log events for any sensor
+- **No Ownership Validation**: Perfect for testing with multiple wallets
+- **Credit Tracking**: Still tracks KOIL credits and deductions
+- **Status**: ✅ Deployed & Verified on Etherscan
+
+**Test Data**:
+- Client: `KoilenTest` (10,000 KOIL credits)
+- Sensor: `KoilenTest_Lab_Sensor1`
+- Creator: 0x69c13cbfFC6Fb9FF93F9371853Da50f737055b89
+
+**Live Dashboard**: Deploy to Vercel for live demo
+- Connect with any wallet
+- Log temperature/humidity events
+- See real-time credit deductions
+- View events on Etherscan
+
+### Why Three Deployments?
 
 1. **MATE Deployment**: Demonstrates integration with official EVVM ecosystem
 2. **Custom EVVM**: Shows complete EVVM deployment from scratch (infrastructure + service)
-3. **Flexibility**: Provides options for different use cases and requirements
-4. **Comparison**: Allows testing and comparing both approaches
+3. **Public Test Contract**: Enables easy testing for hackathon judges with any wallet
+4. **Flexibility**: Provides options for different use cases and requirements
+5. **Comparison**: Allows testing and comparing all three approaches
 
 ---
 
@@ -314,14 +339,16 @@ modifier identityExists(string memory username) {
 
 ### Deployment Comparison
 
-| Feature | MATE (EVVM ID 2) | Custom (EVVM ID 1074) |
-|---------|------------------|------------------------|
-| **EVVM** | Official MATE | Custom deployed |
-| **NameService** | MATE NameService | Custom NameService |
-| **Fisher Support** | ✅ Ready | ⚙️ Configurable |
-| **Control** | Shared ecosystem | Full control |
-| **Use Case** | Production/Hackathon | Custom requirements |
-| **Verification** | ✅ Verified | ✅ Verified |
+| Feature | MATE (EVVM ID 2) | Custom (EVVM ID 1074) | Public Test |
+|---------|------------------|------------------------|-------------|
+| **EVVM** | Official MATE | Custom deployed | Placeholder (test) |
+| **NameService** | MATE NameService | Custom NameService | None (public access) |
+| **Fisher Support** | ✅ Ready | ⚙️ Configurable | N/A |
+| **Control** | Shared ecosystem | Full control | Open access |
+| **Use Case** | Production/Hackathon | Custom requirements | Demo/Testing |
+| **Verification** | ✅ Verified | ✅ Verified | ✅ Verified |
+| **Multi-Wallet** | ❌ Owner only | ❌ Owner only | ✅ Any wallet |
+| **Dashboard** | Compatible | Compatible | ✅ Active |
 
 ---
 
@@ -428,18 +455,20 @@ cast send 0x8DD57a31a4b21FD0000351582e28E50600194f74 \
 ### Koilen Dashboard ✅ PRODUCTION READY
 - **Location**: `koilen-dashboard/`
 - **Status**: Production-ready and Vercel-deployable
-- **Access**: http://localhost:3002
+- **Access**: http://localhost:3003 (dev) | Vercel (production)
+- **Contract**: Public Test Contract (Multi-Wallet) - `0x21eaC0883E57D0F0a6D81C8cF6E27b68164a4CeE`
 
 **Features**:
 - Standalone IoT sensor monitoring interface
 - RainbowKit + Wagmi v3 wallet integration
-- Test Contract (No NameService) configuration
+- **Multi-Wallet Support**: ANY wallet can log events (perfect for demos!)
 - Temperature and humidity monitoring interface
 - Auto-detection of event types based on thresholds
 - Support for 8 event types with real-time cost calculation
-- Real-time credit balance tracking
+- Real-time credit balance tracking (via `getClient()`)
 - Recent events display with color-coded icons
 - Statistics sidebar
+- Etherscan transaction links
 
 **Tech Stack**:
 - Next.js 16.0.3 with Turbopack
