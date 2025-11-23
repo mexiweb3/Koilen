@@ -1,23 +1,50 @@
-# Koilen - IoT Monitoring on MATE Metaprotocol
+# Koilen - IoT Monitoring on EVVM Blockchain
 
 ## Hackathon Submission
 
 **Project**: Koilen - Immutable IoT Sensor Monitoring Platform
-**EVVM Integration**: MATE Metaprotocol (EVVM ID 2)
+**EVVM Integration**: MATE Metaprotocol (EVVM ID 2) + Custom EVVM (EVVM ID 1074)
 **Network**: Ethereum Sepolia Testnet
 
 ---
 
-## Contract Deployment on MATE
+## Dual EVVM Deployment Strategy
 
-**KoilenService**: [0x8DD57a31a4b21FD0000351582e28E50600194f74](https://sepolia.etherscan.io/address/0x8DD57a31a4b21FD0000351582e28E50600194f74)
+### Deployment 1: MATE Metaprotocol (Official - EVVM ID 2)
 
-**MATE Metaprotocol Integration**:
+**KoilenService on MATE**: [0x8DD57a31a4b21FD0000351582e28E50600194f74](https://sepolia.etherscan.io/address/0x8DD57a31a4b21FD0000351582e28E50600194f74)
+
+**Integration**:
 - EVVM (MATE): 0xF817e9ad82B4a19F00dA7A248D9e556Ba96e6366
 - NameService (MATE): 0x8038e87dc67D87b31d890FD01E855a8517ebfD24
 - EVVM ID: 2
+- **Status**: ✅ Deployed & Verified on Etherscan
+- **Features**: Ready for Fisher gasless transactions, production-ready
 
-**Status**: Deployed & Verified on Etherscan
+### Deployment 2: Custom EVVM (EVVM ID 1074)
+
+**Custom EVVM**: [0x7A2D55Cd7946A2565afB5f9bF14E2E0749bF10E5](https://sepolia.etherscan.io/address/0x7A2D55Cd7946A2565afB5f9bF14E2E0749bF10E5)
+
+**Infrastructure**:
+- Custom NameService: 0x3Eb1A06faff55B618eA90b20169f37B73B0dDea3
+- EVVM ID: 1074
+- **Status**: ✅ Registered in EVVM Registry
+- **Features**: Custom infrastructure, full control over identity system
+
+**KoilenService on Custom EVVM**: [0x927e11039EbDE25095b3C413Ef35981119e3f257](https://sepolia.etherscan.io/address/0x927e11039EbDE25095b3C413Ef35981119e3f257)
+
+**Integration**:
+- Uses Custom EVVM (EVVM ID 1074)
+- Uses Custom NameService
+- **Status**: ✅ Deployed & Verified on Etherscan
+- **Features**: Independent infrastructure, custom configuration
+
+### Why Two Deployments?
+
+1. **MATE Deployment**: Demonstrates integration with official EVVM ecosystem
+2. **Custom EVVM**: Shows complete EVVM deployment from scratch (infrastructure + service)
+3. **Flexibility**: Provides options for different use cases and requirements
+4. **Comparison**: Allows testing and comparing both approaches
 
 ---
 
@@ -35,20 +62,28 @@ Uses EVVM blockchain-within-blockchain architecture to create a scalable, gasles
 
 ### 1. Custom Service Prize ($2,500)
 
-**Implementation**: Complete custom service built on MATE Metaprotocol
+**Implementation**: Complete custom service built on **TWO EVVM instances**
+
+**Deployments**:
+1. **MATE Metaprotocol** (EVVM ID 2) - Official ecosystem integration
+2. **Custom EVVM** (EVVM ID 1074) - Complete infrastructure from scratch
 
 **Features**:
 - Hierarchical identity management (Client → Branch → Sensor)
 - Credit-based event logging system (KOIL tokens)
 - 8 event types with variable costs (0-5 KOIL)
-- Integration with MATE NameService for identity validation
+- Dual NameService integration (MATE + Custom)
 - Production-ready smart contract architecture
+- Frontend applications (2) with Web3 integration
 
 **Why it qualifies**:
 - Novel use case: IoT monitoring with blockchain immutability
+- **TWO complete EVVM deployments** (infrastructure + service)
+- Custom EVVM deployment (EVVM + NameService + KoilenService)
 - Custom token economics (KOIL credit system)
 - Real-world industrial application
 - Complete hierarchical data structure
+- Registered in EVVM Registry (EVVM ID 1074)
 
 ### 2. MATE Metaprotocol Use ($2,500 shared)
 
@@ -189,31 +224,75 @@ contract KoilenService {
 
 ---
 
-## MATE Metaprotocol Integration
+## EVVM Infrastructure Deployment
 
-### Why MATE?
+### Custom EVVM Deployment (EVVM ID 1074)
 
-1. **NameService Integration**
+**Complete Infrastructure Stack**:
+
+1. **EVVM Contract**: 0x7A2D55Cd7946A2565afB5f9bF14E2E0749bF10E5
+   - Deployed using official EVVM factory
+   - Registered in EVVM Registry
+   - EVVM ID: 1074
+   - Full blockchain-within-blockchain functionality
+
+2. **Custom NameService**: 0x3Eb1A06faff55B618eA90b20169f37B73B0dDea3
+   - Identity management system
+   - Username-based addressing
+   - Metadata support
+   - Full integration with Custom EVVM
+
+3. **KoilenService**: 0x927e11039EbDE25095b3C413Ef35981119e3f257
+   - IoT monitoring application
+   - Uses Custom EVVM infrastructure
+   - Custom NameService validation
+   - Independent from MATE
+
+**Deployment Process**:
+```bash
+# 1. Deploy EVVM
+forge script script/DeployEVVM.s.sol --broadcast
+
+# 2. Register in EVVM Registry
+# Registered as EVVM ID 1074
+
+# 3. Deploy NameService
+forge script script/DeployNameService.s.sol --broadcast
+
+# 4. Deploy KoilenService
+forge script script/DeployKoilenService.s.sol --broadcast
+```
+
+### MATE Metaprotocol Integration (EVVM ID 2)
+
+**Why MATE?**
+
+1. **Official Ecosystem**
+   - Production-ready infrastructure
+   - MATE NameService integration
+   - Fisher support for gasless transactions
+
+2. **NameService Integration**
    - Decentralized identity for sensors
    - Username-based addressing
    - Metadata support for sensor information
 
-2. **Gasless Transactions**
+3. **Gasless Transactions**
    - Fisher/Relayer support ready
    - Backend can sponsor sensor transactions
    - Zero cost for end-users
 
-3. **Scalability**
+4. **Scalability**
    - EVVM blockchain-within-blockchain
    - Lower gas costs than mainnet
    - Purpose-built for applications like IoT
 
-### Integration Points
+### Integration Points (Both EVVMs)
 
 ```solidity
 constructor(
-    address _evvm,              // MATE EVVM
-    address _nameService,       // MATE NameService
+    address _evvm,              // MATE EVVM or Custom EVVM
+    address _nameService,       // MATE NameService or Custom NameService
     address _admin,
     address _backend
 ) {
@@ -223,7 +302,7 @@ constructor(
     backend = _backend;
 }
 
-// Identity validation
+// Identity validation (works with both NameService instances)
 modifier identityExists(string memory username) {
     require(
         nameService.isIdentityRegistered(username),
@@ -232,6 +311,17 @@ modifier identityExists(string memory username) {
     _;
 }
 ```
+
+### Deployment Comparison
+
+| Feature | MATE (EVVM ID 2) | Custom (EVVM ID 1074) |
+|---------|------------------|------------------------|
+| **EVVM** | Official MATE | Custom deployed |
+| **NameService** | MATE NameService | Custom NameService |
+| **Fisher Support** | ✅ Ready | ⚙️ Configurable |
+| **Control** | Shared ecosystem | Full control |
+| **Use Case** | Production/Hackathon | Custom requirements |
+| **Verification** | ✅ Verified | ✅ Verified |
 
 ---
 
@@ -432,31 +522,44 @@ Addresses actual industrial need for immutable temperature monitoring in:
 - Laboratory equipment
 - Cold chain logistics
 
-### 2. Novel Use of EVVM
-- Demonstrates blockchain-within-blockchain for IoT
-- Showcases NameService for device identity
-- Ready for Fisher gasless transactions
-- Scalable architecture
+### 2. Complete EVVM Ecosystem Deployment ⭐
+- **Deployed Custom EVVM** (EVVM ID 1074) - Complete infrastructure from scratch
+- **Deployed on MATE** (EVVM ID 2) - Integration with official ecosystem
+- **Custom NameService** - Full identity management system
+- **Dual deployment strategy** - Demonstrates both approaches
+- **Registered in EVVM Registry** - Official EVVM ID assignment
+- Shows mastery of entire EVVM stack
 
-### 3. Production Ready
-- Deployed and verified
-- Comprehensive testing
+### 3. Novel Use of EVVM
+- Demonstrates blockchain-within-blockchain for IoT
+- **Built complete EVVM infrastructure** (not just using existing)
+- Showcases NameService for device identity (both MATE and Custom)
+- Ready for Fisher gasless transactions
+- Scalable architecture on TWO EVVMs
+
+### 4. Production Ready
+- **3 verified contracts** (Custom EVVM, NameService, KoilenService)
+- Deployed on both MATE and Custom EVVM
+- Comprehensive testing on both instances
 - Complete documentation
 - Real-world use case
 
-### 4. Technical Excellence
+### 5. Technical Excellence
+- **Complete EVVM deployment** from scratch
 - Clean smart contract design
 - Hierarchical data model
 - Variable cost economics
 - Security best practices
+- Dual NameService integration
 
-### 5. Complete Package
-- Smart contracts
+### 6. Complete Package
+- **Custom EVVM infrastructure** (EVVM + NameService)
+- **3 Smart contract deployments** (MATE + Custom + Test)
 - Frontend applications (2)
-- Deployment scripts
+- Deployment scripts for all components
 - Testing suite
 - Documentation (8 guides)
-- Hackathon-ready
+- Hackathon-ready on TWO EVVMs
 
 ---
 
@@ -484,11 +587,21 @@ Addresses actual industrial need for immutable temperature monitoring in:
 
 ## Links
 
-- **Contract**: https://sepolia.etherscan.io/address/0x8DD57a31a4b21FD0000351582e28E50600194f74
+### MATE Metaprotocol (EVVM ID 2)
+- **KoilenService**: https://sepolia.etherscan.io/address/0x8DD57a31a4b21FD0000351582e28E50600194f74
 - **MATE EVVM**: https://sepolia.etherscan.io/address/0xF817e9ad82B4a19F00dA7A248D9e556Ba96e6366
 - **MATE NameService**: https://sepolia.etherscan.io/address/0x8038e87dc67D87b31d890FD01E855a8517ebfD24
-- **Documentation**: [KOILEN_INDEX.md](KOILEN_INDEX.md)
+
+### Custom EVVM (EVVM ID 1074)
+- **Custom EVVM**: https://sepolia.etherscan.io/address/0x7A2D55Cd7946A2565afB5f9bF14E2E0749bF10E5
+- **Custom NameService**: https://sepolia.etherscan.io/address/0x3Eb1A06faff55B618eA90b20169f37B73B0dDea3
+- **KoilenService**: https://sepolia.etherscan.io/address/0x927e11039EbDE25095b3C413Ef35981119e3f257
+
+### Documentation
+- **Main Index**: [KOILEN_INDEX.md](KOILEN_INDEX.md)
+- **Frontend Guide**: [FRONTEND_README.md](FRONTEND_README.md)
+- **Deployment Summary**: [DEPLOYMENT_SUMMARY.md](DEPLOYMENT_SUMMARY.md)
 
 ---
 
-**Built with MATE Metaprotocol** | **EVVM ID: 2** | **Production Ready**
+**Built with MATE Metaprotocol + Custom EVVM** | **Dual EVVM Deployment** | **Production Ready**
