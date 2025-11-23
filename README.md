@@ -23,6 +23,35 @@ Koilen is an IoT sensor monitoring platform built on EVVM (Ethereum Virtual Mach
 
 ---
 
+## 🏆 Hackathon Submission
+
+Koilen is submitted to the **EVVM Hackathon** with a **dual deployment strategy** that showcases complete EVVM ecosystem mastery:
+
+### Two Complete EVVM Deployments
+
+**1. MATE Metaprotocol (EVVM ID 2)**
+- Official EVVM ecosystem integration
+- KoilenService: [0x8DD57a31a4b21FD0000351582e28E50600194f74](https://sepolia.etherscan.io/address/0x8DD57a31a4b21FD0000351582e28E50600194f74)
+- Production-ready IoT monitoring on established infrastructure
+
+**2. Custom EVVM (EVVM ID 1074)**
+- Complete infrastructure deployed from scratch
+- Custom EVVM + NameService + KoilenService
+- Full control over governance and parameters
+
+### Hackathon Highlights
+
+- ✅ **Dual EVVM Strategy**: Deployed on both MATE (official) and Custom EVVM (ID 1074)
+- ✅ **Complete Infrastructure**: Built entire EVVM ecosystem including NameService
+- ✅ **2 Frontend Applications**: EVVM Signature Constructor + Koilen Dashboard
+- ✅ **8 Documentation Guides**: Comprehensive technical documentation
+- ✅ **Production Ready**: All contracts verified on Etherscan
+- ✅ **Real-world Use Case**: Industrial IoT sensor monitoring with credit system
+
+📄 **For complete hackathon details, technical architecture, and competitive advantages, see [HACKATHON.md](HACKATHON.md)**
+
+---
+
 ## 🚀 Quick Start
 
 ### For Testing (Fastest)
