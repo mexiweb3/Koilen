@@ -5,7 +5,7 @@ import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useWriteContract, useWaitForTransactionReceipt, useReadContract } from 'wagmi';
 import { formatEther } from 'viem';
 
-const KOILEN_ADDRESS = '0x8DD57a31a4b21FD0000351582e28E50600194f74' as const;
+const KOILEN_ADDRESS = '0x0EA04c33d1e50dba7cE53f51CCA5Af3B0De65642' as const;
 
 const KOILEN_ABI = [
   {
@@ -145,8 +145,8 @@ export default function Home() {
               <h1 className="text-2xl font-bold text-gray-900">
                 Koilen Dashboard
               </h1>
-              <span className="ml-3 px-2 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded">
-                MATE Metaprotocol
+              <span className="ml-3 px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded">
+                Test Contract (No NameService)
               </span>
             </div>
             <div className="flex items-center">

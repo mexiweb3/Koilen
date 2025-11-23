@@ -84,13 +84,14 @@ Follow the complete setup guide with NameService integration:
 2. **[KOILEN_README.md](KOILEN_README.md)** - Complete project documentation
 3. **[DEPLOYMENT_SUMMARY.md](DEPLOYMENT_SUMMARY.md)** - All contract addresses and commands
 4. **[QUICK_TEST.md](QUICK_TEST.md)** - Quick testing without NameService
-5. **[FRONTEND_README.md](FRONTEND_README.md)** ⭐ **NEW** - Frontend applications guide
+5. **[FRONTEND_QUICKSTART.md](FRONTEND_QUICKSTART.md)** ⭐ **NEW** - Get frontends running in 5 minutes
+6. **[FRONTEND_README.md](FRONTEND_README.md)** - Complete frontend documentation
 
 ### Advanced
 
-6. **[KOILEN_CLIENT_SETUP.md](KOILEN_CLIENT_SETUP.md)** - Production setup guide
-7. **[NAMESERVICE_GUIDE.md](NAMESERVICE_GUIDE.md)** - Identity system documentation
-8. **[HACKATHON.md](HACKATHON.md)** - Hackathon submission details
+7. **[KOILEN_CLIENT_SETUP.md](KOILEN_CLIENT_SETUP.md)** - Production setup guide
+8. **[NAMESERVICE_GUIDE.md](NAMESERVICE_GUIDE.md)** - Identity system documentation
+9. **[HACKATHON.md](HACKATHON.md)** - Hackathon submission details
 
 ---
 

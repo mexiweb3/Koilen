@@ -11,11 +11,18 @@ Complete documentation for the Koilen IoT sensor monitoring platform on EVVM.
 2. **[DEPLOYMENT_SUMMARY.md](DEPLOYMENT_SUMMARY.md)** - All deployed contract addresses and commands
 3. **[QUICK_TEST.md](QUICK_TEST.md)** - Quick testing guide with KoilenServiceTest
 
+### Frontend Applications ⭐ NEW
+4. **[FRONTEND_QUICKSTART.md](FRONTEND_QUICKSTART.md)** - Get frontends running in 5 minutes
+5. **[FRONTEND_README.md](FRONTEND_README.md)** - Complete frontend documentation
+
 ### Production Setup
-4. **[KOILEN_CLIENT_SETUP.md](KOILEN_CLIENT_SETUP.md)** - Complete production setup with NameService
+6. **[KOILEN_CLIENT_SETUP.md](KOILEN_CLIENT_SETUP.md)** - Complete production setup with NameService
 
 ### EVVM Infrastructure
-5. **[NAMESERVICE_GUIDE.md](NAMESERVICE_GUIDE.md)** - NameService identity system documentation
+7. **[NAMESERVICE_GUIDE.md](NAMESERVICE_GUIDE.md)** - NameService identity system documentation
+
+### Hackathon
+8. **[HACKATHON.md](HACKATHON.md)** - Hackathon submission details
 
 ---
 
@@ -49,12 +56,26 @@ Complete documentation for the Koilen IoT sensor monitoring platform on EVVM.
 - Quick start commands
 - Test results
 
+### I want to run the frontends
+→ Use **[FRONTEND_QUICKSTART.md](FRONTEND_QUICKSTART.md)**
+- 5-minute setup guide
+- Both frontend applications
+- Step-by-step instructions
+- Troubleshooting tips
+
 ### I want to understand NameService
 → Read **[NAMESERVICE_GUIDE.md](NAMESERVICE_GUIDE.md)**
 - Identity system
 - EIP-191 signatures
 - 2-step registration
 - Metadata management
+
+### I want hackathon details
+→ Check **[HACKATHON.md](HACKATHON.md)**
+- Dual EVVM deployment strategy
+- Prize qualification
+- Technical achievements
+- Competitive advantages
 
 ---
 

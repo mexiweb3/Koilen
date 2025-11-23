@@ -4,7 +4,12 @@
       "Bash(cast --to-dec:*)",
       "Bash(cast --to-ascii:*)",
       "Bash(git add:*)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\ndocs: Add prominent hackathon section to README.md\n\nAdded comprehensive hackathon submission section highlighting:\n- Dual EVVM deployment strategy (MATE + Custom EVVM ID 1074)\n- Two complete EVVM deployments with all infrastructure\n- 2 frontend applications (EVVM Constructor + Dashboard)\n- 8 comprehensive documentation guides\n- Production-ready verified contracts\n- Real-world IoT use case implementation\n\nPositioned after \"What is Koilen?\" section for maximum visibility.\nClear link to HACKATHON.md for complete submission details.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push)",
+      "Bash(npm run dev:*)",
+      "Bash(cast call:*)",
+      "Bash(cast send:*)"
     ],
     "deny": [],
     "ask": []
