@@ -333,26 +333,67 @@ cast send 0x8DD57a31a4b21FD0000351582e28E50600194f74 \
 
 ---
 
-## Future Roadmap
+## Frontend Applications
 
-### Phase 1: Frontend (Next.js)
-- Dashboard for sensor management
-- Real-time event visualization
-- Credit management interface
-- Analytics and reporting
+### Phase 1: EVVM Signature Constructor Frontend ✅ COMPLETED
+- **Location**: `EVVM-Signature-Constructor-Front/`
+- **Status**: Deployed and Running
+- **Access**: http://localhost:3000
 
-### Phase 2: Backend API
+**Features**:
+- Full EVVM Signature Constructor Toolkit
+- Custom Koilen IoT Sensor Event Logger
+- Temperature and humidity monitoring interface
+- Auto-detection of event types based on thresholds
+- Support for 8 event types with real-time cost calculation
+- Works with both MATE and Custom EVVM deployments
+- Dynamic contract address selection
+
+**Koilen IoT Integration**:
+- Component: `src/components/SigConstructors/KoilenIoT/SensorEventComponent.tsx`
+- Menu option: "Koilen IoT Sensors"
+- Real-time event type detection
+- Color-coded visual feedback
+- Wallet connection with RainbowKit
+- Transaction submission with Wagmi
+
+**Tech Stack**:
+- Next.js 15.3.0 with App Router
+- Wagmi v2 for Web3 interactions
+- TypeScript
+- RainbowKit wallet connections
+- Inline styling matching EVVM patterns
+
+**Event Thresholds**:
+- TEMP_HIGH: > 10°C (1 KOIL)
+- TEMP_LOW: < -10°C (1 KOIL)
+- HUMIDITY_HIGH: > 80% (1 KOIL)
+- HUMIDITY_LOW: < 30% (1 KOIL)
+- NORMAL: Otherwise (0 KOIL)
+
+### Phase 2: Koilen Dashboard (Standalone)
+- **Location**: `koilen-dashboard/`
+- **Status**: Basic implementation
+- **Access**: http://localhost:3001
+
+**Features**:
+- Simplified IoT sensor logging interface
+- RainbowKit wallet integration
+- MATE Metaprotocol specific UI
+- Temperature/humidity event logging
+
+### Phase 3: Backend API
 - REST API for IoT devices
 - Automatic transaction signing
 - Batch event processing
 - Queue management
 
-### Phase 3: Fisher Integration
+### Phase 4: Fisher Integration
 - Gasless transactions for sensors
 - Backend-sponsored operations
 - Zero-cost user experience
 
-### Phase 4: Multi-Chain
+### Phase 5: Multi-Chain
 - Deploy on other EVVM instances
 - Cross-chain credit bridging
 - Multi-network monitoring
@@ -411,9 +452,10 @@ Addresses actual industrial need for immutable temperature monitoring in:
 
 ### 5. Complete Package
 - Smart contracts
+- Frontend applications (2)
 - Deployment scripts
 - Testing suite
-- Documentation (7 guides)
+- Documentation (8 guides)
 - Hackathon-ready
 
 ---
@@ -425,6 +467,8 @@ Addresses actual industrial need for immutable temperature monitoring in:
 **Directories**:
 - `/src/contracts/koilen/` - Smart contracts
 - `/script/` - Deployment scripts
+- `/EVVM-Signature-Constructor-Front/` - EVVM frontend with Koilen IoT
+- `/koilen-dashboard/` - Standalone Koilen dashboard
 - `/docs/` - Complete documentation
 
 ---
