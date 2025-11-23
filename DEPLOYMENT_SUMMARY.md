@@ -10,12 +10,19 @@
 
 ## EVVM Infrastructure
 
-### Core EVVM
+### MATE Metaprotocol (Official - EVVM ID 2)
+**EVVM Address**: [0xF817e9ad82B4a19F00dA7A248D9e556Ba96e6366](https://sepolia.etherscan.io/address/0xF817e9ad82B4a19F00dA7A248D9e556Ba96e6366)
+**NameService**: [0x8038e87dc67D87b31d890FD01E855a8517ebfD24](https://sepolia.etherscan.io/address/0x8038e87dc67D87b31d890FD01E855a8517ebfD24)
+**EVVM ID**: 2
+**Status**: ✅ Official MATE Testnet
+**Features**: Gasless transactions via Fishers, Production-ready
+
+### Custom EVVM (EVVM ID 1074)
 **Address**: [0x7A2D55Cd7946A2565afB5f9bF14E2E0749bF10E5](https://sepolia.etherscan.io/address/0x7A2D55Cd7946A2565afB5f9bF14E2E0749bF10E5)
 **EVVM ID**: 1074
 **Status**: ✅ Deployed and Registered
 
-### NameService
+### Custom NameService
 **Address**: [0x3Eb1A06faff55B618eA90b20169f37B73B0dDea3](https://sepolia.etherscan.io/address/0x3Eb1A06faff55B618eA90b20169f37B73B0dDea3)
 **Status**: ✅ Deployed
 **Features**: Identity registration with EIP-191 signatures
@@ -24,7 +31,28 @@
 
 ## Koilen Smart Contracts
 
-### KoilenService (Production)
+### KoilenService on MATE Metaprotocol (HACKATHON)
+**Address**: [0x8DD57a31a4b21FD0000351582e28E50600194f74](https://sepolia.etherscan.io/address/0x8DD57a31a4b21FD0000351582e28E50600194f74)
+**Deployment Date**: November 23, 2024
+**Status**: ✅ Deployed and Verified on MATE (EVVM ID 2)
+**Gas Used**: 1,780,450
+**Cost**: 0.00000213653821955 ETH
+
+**Features**:
+- MATE NameService integration
+- Hierarchical client-branch-sensor structure
+- Credit-based event logging
+- 8 event types with configurable costs
+- Admin controls
+- Ready for Fisher gasless transactions
+
+**Configuration**:
+- Admin: 0x69c13cbfFC6Fb9FF93F9371853Da50f737055b89
+- Backend: 0x69c13cbfFC6Fb9FF93F9371853Da50f737055b89
+- EVVM (MATE): 0xF817e9ad82B4a19F00dA7A248D9e556Ba96e6366
+- NameService (MATE): 0x8038e87dc67D87b31d890FD01E855a8517ebfD24
+
+### KoilenService (Production - Custom EVVM)
 **Address**: [0x927e11039EbDE25095b3C413Ef35981119e3f257](https://sepolia.etherscan.io/address/0x927e11039EbDE25095b3C413Ef35981119e3f257)
 **Deployment Date**: November 23, 2024
 **Status**: ✅ Deployed and Verified
@@ -110,7 +138,21 @@
 
 ## Deployment Scripts
 
-### Production Deployment
+### MATE Metaprotocol Deployment (HACKATHON)
+```bash
+forge script script/DeployKoilenServiceMATE.s.sol:DeployKoilenServiceMATE \
+  --rpc-url https://0xrpc.io/sep \
+  --account defaultKey \
+  --broadcast \
+  --verify \
+  --etherscan-api-key $ETHERSCAN_API \
+  -vvvv
+```
+
+**File**: [script/DeployKoilenServiceMATE.s.sol](script/DeployKoilenServiceMATE.s.sol)
+**Deployed**: 0x8DD57a31a4b21FD0000351582e28E50600194f74
+
+### Production Deployment (Custom EVVM)
 ```bash
 forge script script/DeployKoilenService.s.sol:DeployKoilenService \
   --rpc-url https://0xrpc.io/sep \
@@ -122,6 +164,7 @@ forge script script/DeployKoilenService.s.sol:DeployKoilenService \
 ```
 
 **File**: [script/DeployKoilenService.s.sol](script/DeployKoilenService.s.sol)
+**Deployed**: 0x927e11039EbDE25095b3C413Ef35981119e3f257
 
 ### Test Deployment
 ```bash
@@ -135,6 +178,7 @@ forge script script/DeployKoilenServiceTest.s.sol:DeployKoilenServiceTest \
 ```
 
 **File**: [script/DeployKoilenServiceTest.s.sol](script/DeployKoilenServiceTest.s.sol)
+**Deployed**: 0x0EA04c33d1e50dba7cE53f51CCA5Af3B0De65642
 
 ---
 
