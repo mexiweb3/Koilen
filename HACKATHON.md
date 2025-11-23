@@ -74,7 +74,7 @@ Uses EVVM blockchain-within-blockchain architecture to create a scalable, gasles
 - 8 event types with variable costs (0-5 KOIL)
 - Dual NameService integration (MATE + Custom)
 - Production-ready smart contract architecture
-- Frontend applications (2) with Web3 integration
+- Production frontend (Koilen Dashboard) with Web3 integration
 
 **Why it qualifies**:
 - Novel use case: IoT monitoring with blockchain immutability
@@ -423,36 +423,31 @@ cast send 0x8DD57a31a4b21FD0000351582e28E50600194f74 \
 
 ---
 
-## Frontend Applications
+## Frontend Application
 
-### Phase 1: EVVM Signature Constructor Frontend ✅ COMPLETED
-- **Location**: `EVVM-Signature-Constructor-Front/`
-- **Status**: Deployed and Running
-- **Access**: http://localhost:3000
+### Koilen Dashboard ✅ PRODUCTION READY
+- **Location**: `koilen-dashboard/`
+- **Status**: Production-ready and Vercel-deployable
+- **Access**: http://localhost:3002
 
 **Features**:
-- Full EVVM Signature Constructor Toolkit
-- Custom Koilen IoT Sensor Event Logger
+- Standalone IoT sensor monitoring interface
+- RainbowKit + Wagmi v3 wallet integration
+- Test Contract (No NameService) configuration
 - Temperature and humidity monitoring interface
 - Auto-detection of event types based on thresholds
 - Support for 8 event types with real-time cost calculation
-- Works with both MATE and Custom EVVM deployments
-- Dynamic contract address selection
-
-**Koilen IoT Integration**:
-- Component: `src/components/SigConstructors/KoilenIoT/SensorEventComponent.tsx`
-- Menu option: "Koilen IoT Sensors"
-- Real-time event type detection
-- Color-coded visual feedback
-- Wallet connection with RainbowKit
-- Transaction submission with Wagmi
+- Real-time credit balance tracking
+- Recent events display with color-coded icons
+- Statistics sidebar
 
 **Tech Stack**:
-- Next.js 15.3.0 with App Router
-- Wagmi v2 for Web3 interactions
+- Next.js 16.0.3 with Turbopack
+- Wagmi v3 for Web3 interactions
 - TypeScript
 - RainbowKit wallet connections
-- Inline styling matching EVVM patterns
+- Tailwind CSS v4
+- Vercel-ready deployment configuration
 
 **Event Thresholds**:
 - TEMP_HIGH: > 10°C (1 KOIL)
@@ -460,23 +455,15 @@ cast send 0x8DD57a31a4b21FD0000351582e28E50600194f74 \
 - HUMIDITY_HIGH: > 80% (1 KOIL)
 - HUMIDITY_LOW: < 30% (1 KOIL)
 - NORMAL: Otherwise (0 KOIL)
+- DOOR_OPEN: Manual (2 KOIL)
+- POWER_FAILURE: Manual (5 KOIL)
+- SENSOR_ERROR: Manual (1 KOIL)
 
-### Phase 2: Koilen Dashboard (Standalone)
-- **Location**: `koilen-dashboard/`
-- **Status**: Basic implementation
-- **Access**: http://localhost:3001
-
-**Features**:
-- Simplified IoT sensor logging interface
-- RainbowKit wallet integration
-- MATE Metaprotocol specific UI
-- Temperature/humidity event logging
-
-### Phase 3: Backend API
-- REST API for IoT devices
-- Automatic transaction signing
-- Batch event processing
-- Queue management
+**Deployment**:
+- Configured for Vercel with `serverExternalPackages`
+- Local build tested and working
+- Production-ready with complete documentation
+- See [koilen-dashboard/DEPLOY.md](koilen-dashboard/DEPLOY.md)
 
 ### Phase 4: Fisher Integration
 - Gasless transactions for sensors
@@ -570,9 +557,8 @@ Addresses actual industrial need for immutable temperature monitoring in:
 **Directories**:
 - `/src/contracts/koilen/` - Smart contracts
 - `/script/` - Deployment scripts
-- `/EVVM-Signature-Constructor-Front/` - EVVM frontend with Koilen IoT
-- `/koilen-dashboard/` - Standalone Koilen dashboard
-- `/docs/` - Complete documentation
+- `/koilen-dashboard/` - Production-ready Koilen IoT Dashboard
+- `/docs/` - Complete documentation (8 guides)
 
 ---
 
@@ -599,7 +585,7 @@ Addresses actual industrial need for immutable temperature monitoring in:
 
 ### Documentation
 - **Main Index**: [KOILEN_INDEX.md](KOILEN_INDEX.md)
-- **Frontend Guide**: [FRONTEND_README.md](FRONTEND_README.md)
+- **Frontend Quickstart**: [FRONTEND_QUICKSTART.md](FRONTEND_QUICKSTART.md)
 - **Deployment Summary**: [DEPLOYMENT_SUMMARY.md](DEPLOYMENT_SUMMARY.md)
 
 ---

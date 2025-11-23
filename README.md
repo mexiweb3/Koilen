@@ -43,7 +43,7 @@ Koilen is submitted to the **EVVM Hackathon** with a **dual deployment strategy*
 
 - ✅ **Dual EVVM Strategy**: Deployed on both MATE (official) and Custom EVVM (ID 1074)
 - ✅ **Complete Infrastructure**: Built entire EVVM ecosystem including NameService
-- ✅ **2 Frontend Applications**: EVVM Signature Constructor + Koilen Dashboard
+- ✅ **Production Frontend**: Koilen Dashboard with RainbowKit wallet integration
 - ✅ **8 Documentation Guides**: Comprehensive technical documentation
 - ✅ **Production Ready**: All contracts verified on Etherscan
 - ✅ **Real-world Use Case**: Industrial IoT sensor monitoring with credit system

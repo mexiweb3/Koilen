@@ -11,9 +11,9 @@ Complete documentation for the Koilen IoT sensor monitoring platform on EVVM.
 2. **[DEPLOYMENT_SUMMARY.md](DEPLOYMENT_SUMMARY.md)** - All deployed contract addresses and commands
 3. **[QUICK_TEST.md](QUICK_TEST.md)** - Quick testing guide with KoilenServiceTest
 
-### Frontend Applications ⭐ NEW
-4. **[FRONTEND_QUICKSTART.md](FRONTEND_QUICKSTART.md)** - Get frontends running in 5 minutes
-5. **[FRONTEND_README.md](FRONTEND_README.md)** - Complete frontend documentation
+### Frontend Application ⭐ NEW
+4. **[FRONTEND_QUICKSTART.md](FRONTEND_QUICKSTART.md)** - Get dashboard running in 5 minutes
+5. **[koilen-dashboard/DEPLOY.md](koilen-dashboard/DEPLOY.md)** - Vercel deployment guide
 
 ### Production Setup
 6. **[KOILEN_CLIENT_SETUP.md](KOILEN_CLIENT_SETUP.md)** - Complete production setup with NameService
@@ -56,10 +56,10 @@ Complete documentation for the Koilen IoT sensor monitoring platform on EVVM.
 - Quick start commands
 - Test results
 
-### I want to run the frontends
+### I want to run the dashboard
 → Use **[FRONTEND_QUICKSTART.md](FRONTEND_QUICKSTART.md)**
 - 5-minute setup guide
-- Both frontend applications
+- Koilen Dashboard application
 - Step-by-step instructions
 - Troubleshooting tips
 

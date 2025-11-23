@@ -13,7 +13,8 @@
       "Bash(npm run build:*)",
       "Bash(git commit -m \"$(cat <<''EOF''\nfeat: Configure Koilen Dashboard for Vercel deployment\n\nAdded complete Vercel deployment configuration:\n\nDashboard Configuration:\n- vercel.json: Vercel-specific build settings\n- next.config.ts: Webpack config for Web3 libraries\n- package.json: Added build scripts (build, build:turbo, build:webpack)\n- .npmrc: Legacy peer deps configuration\n- DEPLOY.md: Quick deployment guide\n- VERCEL_DEPLOYMENT.md: Comprehensive deployment documentation\n\nBuild Optimizations:\n- Webpack fallbacks for Node.js modules (fs, net, tls, encoding)\n- External dependencies configuration (pino-pretty, lokijs, encoding)\n- Server actions body size limit (2mb)\n- No-lint flag to skip linting during build\n- Support for both Turbopack and Webpack builds\n\nDeployment Instructions:\n1. Push to GitHub\n2. Import to Vercel\n3. Set root directory to koilen-dashboard\n4. Deploy with npm install --legacy-peer-deps\n\nReady for one-click Vercel deployment with complete Web3 support.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
       "Bash(git commit -m \"$(cat <<''EOF''\nfix: Update Vercel build configuration for Next.js 16\n\nFixed build issues for Vercel deployment:\n\nChanges:\n- Removed invalid --no-lint flag from build command\n- Added eslint.ignoreDuringBuilds: true to next.config.ts\n- Added typescript.ignoreBuildErrors: true to next.config.ts\n- Created .eslintrc.json with relaxed rules\n- Simplified package.json scripts\n\nThis allows the build to complete successfully on Vercel\ndespite any linting or TypeScript warnings.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(vercel login:*)"
     ],
     "deny": [],
     "ask": []
